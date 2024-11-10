@@ -58,6 +58,7 @@ body * {
     z-index: 1000;
     border-radius: 25px;
     margin: 10px;
+    margin-bottom: 15px !important;
     border: 1px solid var(--onSurfaceVarient);
   }
 
