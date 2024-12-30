@@ -47,7 +47,7 @@ body * {
   }
 
   .mdc-bottom-navigation {
-    height: 50px;
+    height: 60px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -56,10 +56,10 @@ body * {
     display: flex;
     justify-content: space-around;
     z-index: 1000;
-    border-radius: 25px;
-    margin: 10px;
-    margin-bottom: 15px !important;
-    border: 1px solid var(--onSurfaceVarient);
+    border-radius: 25px 25px 0px 0px;
+    /*margin: 10px;
+    margin-bottom: 15px !important;*/
+    border-top: 1px solid var(--onSurfaceVarient);
   }
 
   .mdc-bottom-navigation__item {
