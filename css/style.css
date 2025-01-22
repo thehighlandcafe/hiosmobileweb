@@ -1,5 +1,5 @@
 /*Import Fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
 
 /*COLOURS*/
 :root {
@@ -57,7 +57,7 @@
 /*Text*/
 .blue-h2 {
     color: var(--primary);
-    font-family: 'Inter', sans-serif;
+    font-family: 'SUSE', sans-serif;
     font-size: 45px;
     font-weight: 100;
     text-align: left;
