@@ -1,6 +1,6 @@
 {
-    "name": "HiOSMobile",
-    "short_name": "HiOSMobile",
+    "name": "HiOSMobile Lite",
+    "short_name": "HiOSMobile Lite",
     "start_url": "index.html",
     "scope": "./",
     "icons": [
@@ -35,7 +35,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#011c36",
-    "background_color": "#131314",
+    "theme_color": "#a0c9ff",
+    "background_color": "#1a1c1e",
     "display": "standalone"
 }
