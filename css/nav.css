@@ -33,18 +33,18 @@ html {
     -moz-user-select: none; /*Firefox*/
 }
 
-body {
+/*body {
     margin: 0;
-    padding-bottom: 56px; /* Adjust to match the height of the bottom navigation bar */
-  }
+    padding-bottom: 56px; /* Adjust to match the height of the bottom navigation bar 
+  }*/
 
 body * {
   -webkit-tap-highlight-color: transparent;
 }
 
-  .container {
+  /*.container {
     position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
-  }
+  }*/
 
   .mdc-bottom-navigation {
     height: 60px;
@@ -87,20 +87,22 @@ body * {
     padding-top: 2px;
   }
 
-  .icon {
-    vertical-align: middle !important;
-  }
-
   .activeIcon {
     background-color: var(--primaryContainer);
     width: 64px;
     height: 32px;
     border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .inactiveIcon {
     width: 64px;
     height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 .top-bar {
@@ -149,6 +151,60 @@ body * {
   display: none;
   color: var(--onSurface);
   text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+.toolbaricon .container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; /* Default to full width within the padding */
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .toolbaricon .container {
+    max-width: 540px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .toolbaricon .container {
+    max-width: 720px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .toolbaricon .container {
+    max-width: 960px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .toolbaricon .container {
+    max-width: 1140px;
+  }
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .toolbaricon .container {
+    max-width: 1320px;
+  }
+}
+
+.toprightclose {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+.card-body {
+  padding: 1rem;
 }
 
 .toprightclose {
