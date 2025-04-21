@@ -4,51 +4,63 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="color-scheme" content="dark light">
 		<link rel="icon" href="https://thehighlandcafe.github.io/hioswebcore/assets/pics/logos/hiosbadge.png" type="image/icon type">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
         <link rel="stylesheet" href="https://thehighlandcafe.github.io/hioswebcore/assets/css/style.css" type="text/css">
         <link rel="stylesheet" href="https://thehighlandcafe.github.io/hioswebcore/assets/css/ripple.css" type="text/css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <script src="../scripts/more.js"></script>
+		<script src="https://thehighlandcafe.github.io/hioswebcore/assets/scripts/links.js"></script>
 		<title>HiOSMobile | Settings</title>
 	</head>
     <body>
-		<span class="material-symbols-rounded" onclick="showPage('../index.html')">arrow_back_ios</span>
-        <br><br>
-        <center>
-			<div class="container">
-			<h1 class="blue-h2"><span class="titleIcon material-symbols-rounded">settings</span>Settings</h1>
-					<p id="para">Choose a settings category from below.</p>
+		<main class="container mt-4 mb-4">
+			<span class="material-symbols-rounded" onclick="link('../index.html')">arrow_back_ios</span>
+			<div class="top-container mt-3">
+				<h1 class="blue-h2"><span class="titleIcon material-symbols-rounded">settings</span>Settings</h1>
+				<p id="para">Choose a settings category from below.</p>
 			</div>
-			<div class="translucentBox joinTop">
-				<button class="ripple-button joinTop roundedImage button" onclick="settingsWebsite('https://sites.google.com/view/hios-by-thc/lite#h.awqn793zfcvb')">
-					<span class="material-symbols-rounded">system_update</span>
-					<span class="button-text">Update HiOSMobile™️ Lite</span>
-				</button>
-				<div class="translucentAboutBox full">
-					<p>Learn how to update HiOSMobile™️ Lite on our website.</p>
+			<div class="card mt-4 joinTop">
+				<div class="card-body">
+					<h5 class="card-title">Updates</h5>
+					<button class="ripple-button joinTop roundedImage button" onclick="settingsWebsite('https://hienterprises.github.io/hiosmobile/lite')">
+						<span class="material-symbols-rounded">system_update</span>
+						<span class="button-text">Update HiOSMobile™</span>
+					</button>
+					<div class="card translucentAboutBox">
+						<div class="card-body">
+							<p class="card-text">Learn how to update HiOSMobile™ Lite on our website.</p>
+						</div>
+					</div>
 				</div>
 			</div>
+			<div class="card joinMiddle">
+				<div class="card-body">
+					<h5 class="card-title">General</h5>
+					<button class="ripple-button joinTop roundedImage button" onclick="link('settings_activities/apps_activity.html')">
+						<span class="material-symbols-rounded">dashboard_customize</span>
+						<span class="button-text">Apps and Services</span>
+					</button>
+					<button class="ripple-button joinMiddle roundedImage button" onclick="link('settings_activities/websites_activity.html')">
+						<span class="material-symbols-rounded">language</span>
+						<span class="button-text">Websites</span>
+					</button>
+					<button class="ripple-button joinBottom roundedImage button" onclick="link('settings_activities/socials_activity.html')">
+						<span class="material-symbols-rounded">share</span>
+						<span class="button-text">Socials</span>
+					</button>
+				</div>
 			</div>
-			<div class="translucentBox joinMiddle">
-				<button class="ripple-button joinTop roundedImage button" onclick="showPage('settings_activities/apps_activity.html')">
-					<span class="material-symbols-rounded">dashboard_customize</span>
-					<span class="button-text">Apps and Services</span>
-				</button>
-				<button class="ripple-button joinMiddle roundedImage button" onclick="showPage('settings_activities/websites_activity.html')">
-					<span class="material-symbols-rounded">language</span>
-					<span class="button-text">Websites</span>
-				</button>
-				<button class="ripple-button joinBottom roundedImage button" onclick="showPage('settings_activities/socials_activity.html')">
-					<span class="material-symbols-rounded">share</span>
-					<span class="button-text">Socials</span>
-				</button>
+			<div class="card joinBottom">
+				<div class="card-body">
+					<h5 class="card-title">Your Privacy</h5>
+					<button class="ripple-button full roundedImage button" onclick="link('settings_activities/privacypolicy_activity.html')">
+						<span class="material-symbols-rounded">security</span>
+						<span class="button-text">Privacy Policy</span>
+					</button>
+				</div>
 			</div>
-			<div class="translucentBox joinBottom">
-				<button class="ripple-button full roundedImage button" onclick="showPage('settings_activities/privacypolicy_activity.html')">
-					<span class="material-symbols-rounded">security</span>
-					<span class="button-text">Privacy Policy</span>
-				</button>
-			</div>
-		</center><br><br><br><br>
+		</main>
         <script src="https://thehighlandcafe.github.io/hioswebcore/assets/scripts/ripple.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YpPczugYYLkLMkpBqlbQlHvpcRQlzhZKHXYkJGVxHf39Eo7RjVMqljJutlnWsZPd" crossorigin="anonymous"></script>
     </body>
 </html>

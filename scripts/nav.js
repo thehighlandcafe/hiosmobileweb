@@ -51,8 +51,3 @@ function showToolbaricon(dialog) {
 function hideToolbaricon(dialog) {
         document.getElementById(dialog).style.display = "none";
 }
-
-        //Buttons on the dialog
-function toolbariconPage(destination) {
-        window.location.href = destination;
-}
