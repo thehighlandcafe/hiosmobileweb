@@ -1,268 +1,53 @@
-function home() {
-        //Showing home section
-
-                //Label
-        //document.getElementById('homeLabel').style.display = "block";
-                //Icon
-        document.getElementById('homeIcon').className = "activeIcon";
-
-        //Hiding other navigation items' labels etc.
-    
-            //Restaurant section
-                //Label
-        //document.getElementById('restaurantLabel').style.display = "none";
-                //Icon
-        document.getElementById('restaurantIcon').className = "inactiveIcon";
-    
-            //Hotel section
-                //Label
-        //document.getElementById('hotelLabel').style.display = "none";
-                //Icon
-        document.getElementById('hotelIcon').className = "inactiveIcon";
-    
-            //Roomkey section
-                //Label
-        //document.getElementById('roomkeyLabel').style.display = "none";
-                //Icon
-        document.getElementById('roomkeyIcon').className = "inactiveIcon";
-
-        /*    //More section
-                //Label
-        document.getElementById('moreLabel').style.display = "none";
-                //Icon
-        document.getElementById('moreIcon').className = "inactiveIcon";*/
-    
-        //Changing the iframe source
-        document.getElementById('content').src = "https://thehighlandcafe.github.io/hioswebcore/welcome.html";
-    
-        //Changing the page's titles to match the section
-        document.title = "HiOSMobile | Home";
-        document.getElementById('pageTitle').textContent = "Home";
-    
-        //Hiding More container and showing iframe
-        document.getElementById('moreContainer').style.display = "none";
-        document.getElementById('frameContainer').style.display = "block";
-
-        //Hiding toolbaricon
-        document.getElementById('dialog').style.display = "none";
-        document.getElementById('moreNavigationIcon').className = "inactiveIcon";
-}
-    
-function restaurant() {
-            //Showing restaurant section
-    
-                //Label
-        //document.getElementById('restaurantLabel').style.display = "block";
-                //Icon
-        document.getElementById('restaurantIcon').className = "activeIcon";
-    
-        //Hiding other navigation items' labels etc.
-    
-            //Home section
-                //Label
-        //document.getElementById('homeLabel').style.display = "none";
-                //Icon
-        document.getElementById('homeIcon').className = "inactiveIcon";
-    
-            //Hotel section
-                //Label
-        //document.getElementById('hotelLabel').style.display = "none";
-                //Icon
-        document.getElementById('hotelIcon').className = "inactiveIcon";
-    
-            //Roomkey section
-                //Label
-        //document.getElementById('roomkeyLabel').style.display = "none";
-                //Icon
-        document.getElementById('roomkeyIcon').className = "inactiveIcon";
-
-        /*    //More section
-                //Label
-        document.getElementById('moreLabel').style.display = "none";
-                //Icon
-        document.getElementById('moreIcon').className = "inactiveIcon";*/
-    
-        //Changing the iframe source
-        document.getElementById('content').src = "https://thehighlandcafe.github.io/hioswebcore/restaurant.html";
-    
-        //Changing the page's titles to match the section
-        document.title = "HiOSMobile | Food";
-        document.getElementById('pageTitle').textContent = "Food";
-    
-        //Hiding More container and showing iframe
-        document.getElementById('moreContainer').style.display = "none";
-        document.getElementById('frameContainer').style.display = "block";
-
-        //Hiding toolbaricon
-        document.getElementById('dialog').style.display = "none";
-}
-    
-function hotel() {
-        //Showing hotel section
-    
-                //Label
-        //document.getElementById('hotelLabel').style.display = "block";
-                //Icon
-        document.getElementById('hotelIcon').className = "activeIcon";
-    
-        //Hiding other navigation items' labels etc.
-    
-            //Home section
-                //Label
-        //document.getElementById('homeLabel').style.display = "none";
-                //Icon
-        document.getElementById('homeIcon').className = "inactiveIcon";
-    
-            //Restaurant section
-                //Label
-        //document.getElementById('restaurantLabel').style.display = "none";
-                //Icon
-        document.getElementById('restaurantIcon').className = "inactiveIcon";
-
-            //Roomkey section
-                //Label
-        //document.getElementById('roomkeyLabel').style.display = "none";
-                //Icon
-        document.getElementById('roomkeyIcon').className = "inactiveIcon";
-    
-        /*    //More section
-                //Label
-        document.getElementById('moreLabel').style.display = "none";
-                //Icon
-        document.getElementById('moreIcon').className = "inactiveIcon";*/
-    
-        //Changing the iframe source
-        document.getElementById('content').src = "https://thehighlandcafe.github.io/hioswebcore/hotelactivities.html";
-    
-        //Changing the page's titles to match the section
-        document.title = "HiOSMobile | Hotel";
-        document.getElementById('pageTitle').textContent = "Hotel";
-    
-        //Hiding More container and showing iframe
-        document.getElementById('moreContainer').style.display = "none";
-        document.getElementById('frameContainer').style.display = "block";
-
-        //Hiding toolbaricon
-        document.getElementById('dialog').style.display = "none";
+function loadIframe(url) {
+        const iframe = document.getElementById('content');
+        iframe.src = url;
 }
 
-function roomkey() {
-        //Showing roomkey section
+//function to handle the active state of navigation items
+function setActiveNavItem(clickedItem) {
+        const navItems = document.querySelectorAll('.mdc-bottom-navigation__item');
 
-                //Label
-        //document.getElementById('roomkeyLabel').style.display = "block";
-                //icon
-        document.getElementById('roomkeyIcon').className = "activeIcon";
+        //remove active class from all items
+        navItems.forEach(item => {
+                const iconDiv = item.querySelector('div');
+                if (iconDiv) {
+                        iconDiv.className = 'inactiveIcon';
+                }
+        });
 
-        //Hiding other navigation items' labels etc.
-
-            //Home section
-                //Label
-        //document.getElementById('homeLabel').style.display = "none";
-                //Icon
-        document.getElementById('homeIcon').className = "inactiveIcon";
-    
-            //Restaurant section
-                //Label
-        //document.getElementById('restaurantLabel').style.display = "none";
-                //Icon
-        document.getElementById('restaurantIcon').className = "inactiveIcon";
-
-            //Hotel section
-                //Label
-        //document.getElementById('hotelLabel').style.display = "none";
-                //Icon
-        document.getElementById('hotelIcon').className = "inactiveIcon";
-
-        //Changing the iframe source
-        document.getElementById('content').src = "https://thehighlandcafe.github.io/hioswebcore/roomkey.html";
-
-        //Changing the page's titles to match the section
-        document.title = "HiOSMobile | Room Key";
-        document.getElementById('pageTitle').textContent = "Room Key";
-
-        //Hiding More container and showing iframe
-        document.getElementById('moreContainer').style.display = "none";
-        document.getElementById('frameContainer').style.display = "block";
-
-        //Hiding toolbaricon
-        document.getElementById('dialog').style.display = "none";
+        //set clicked item to active
+        const clickedIconDiv = clickedItem.querySelector('div');
+        if (clickedIconDiv) {
+                clickedIconDiv.className = 'activeIcon';
+        }
 }
-    
-/*function more() {
-        //Showing more section
-    
-                //Label
-        document.getElementById('moreLabel').style.display = "block";
-                //Icon
-        document.getElementById('moreIcon').className = "activeIcon";
-    
-        //Hiding other navigation items' labels etc.
-    
-            //Home section
-                //Label
-        document.getElementById('homeLabel').style.display = "none";
-                //Icon
-        document.getElementById('homeIcon').className = "inactiveIcon";
-    
-            //Hotel section
-                //Label
-        document.getElementById('hotelLabel').style.display = "none";
-                //Icon
-        document.getElementById('hotelIcon').className = "inactiveIcon";
-    
-            //Restaurant section
-                //Label
-        document.getElementById('restaurantLabel').style.display = "none";
-                //Icon
-        document.getElementById('restaurantIcon').className = "inactiveIcon";
-    
-        //Changing the iframe source
-        //document.getElementById('content').src = "https://thehighlandcafe.github.io/hiosmobile/more.html";
-    
-        //Hiding the iFrame altogether
-        document.getElementById('frameContainer').style.display = "none";
-    
-        //Showing the custom More page
-        document.getElementById('moreContainer').style.display = "block";
-    
-        //Changing the page's titles to match the section
-        document.title = "HiOSMobile | More";
-        document.getElementById('pageTitle').textContent="More";
-}
-    
-function moreNew() {
-        window.location.href = "more.html";
-}*/
+
+//add event listeners to bottom nav items
+document.addEventListener('DOMContentLoaded', function() {
+        const navItems = document.querySelectorAll('.mdc-bottom-navigation__item');
+
+        navItems.forEach(item => {
+                item.addEventListener('click', function(event) {
+                        const url = this.getAttribute('data-iframe-url');
+                        if (url) {
+                                loadIframe(url);
+                        }
+                        setActiveNavItem(this);
+                });
+        });
+
+        const initialActiveItem = document.querySelector('.mdc-bottom-navigation__item[data-iframe-url="https://thehighlandcafe.github.io/hioswebcore/welcome.html"]');
+        if (initialActiveItem) {
+                setActiveNavItem(initialActiveItem);
+        }
+});
 
 //Toolbaricon functions
         //Opening and closing
 function showToolbaricon(dialog) {
         document.getElementById(dialog).style.display = "block";
-        //document.getElementById("moreNavigationIcon").className = "activeIcon";
-        //document.getElementById("moreNavLabel").style.display = "block";
-        //document.getElementById("content").src = "https://thehighlandcafe.github.io/hioswebcore/welcome.html";
-        
-        //document.getElementById("homeIcon").className = "inactiveIcon";
-        //document.getElementById("homeLabel").style.display = "none";
-
-        //document.getElementById("restaurantIcon").className = "inactiveIcon";
-        //document.getElementById("restaurantLabel").style.display = "none";
-
-        //document.getElementById("hotelIcon").className = "inactiveIcon";
-        //document.getElementById("hotelLabel").style.display = "none";
-
-        //document.getElementById("roomkeyIcon").className = "inactiveIcon";
-        //document.getElementById("roomkeyLabel").style.display = "none";
 }
 
 function hideToolbaricon(dialog) {
         document.getElementById(dialog).style.display = "none";
-        //document.getElementById("moreNavigationIcon").className = "inactiveIcon";
-        //document.getElementById("moreNavLabel").style.display = "none";
-}
-
-        //Buttons on the dialog
-function toolbariconPage(destination) {
-        window.location.href = destination;
 }
