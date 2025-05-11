@@ -13,13 +13,30 @@
 		<title>HiOSMobile | Settings</title>
 	</head>
     <body>
+		<!--The universal background image-->
+		<div class="background-wrapper">
+			<div class="background-image"></div>
+		</div>
 		<main class="container mt-4 mb-4">
 			<span class="material-symbols-rounded" onclick="link('../index.html')">arrow_back_ios</span>
-			<div class="top-container mt-3">
-				<h1 class="blue-h2"><span class="titleIcon material-symbols-rounded">settings</span>Settings</h1>
-				<p id="para">Choose a settings category from below.</p>
+			<div class="card full mt-3">
+				<div class="card-body">
+					<div class="top-container mt-3">
+						<h1 class="blue-h2"><span class="titleIcon material-symbols-rounded">settings</span>Settings</h1>
+						<p id="para">Choose a settings category from below.</p>
+					</div>
+				</div>
 			</div>
-			<div class="card mt-4 joinTop">
+			<div class="card mt-2 joinTop">
+				<div class="card-body">
+					<h5 class="card-title">Customisation</h5>
+					<button class="ripple-button joinTop roundedImage button" onclick="link('settings_activities/appearance_activity.html')">
+						<span class="material-symbols-rounded">palette</span>
+						<span class="button-text">Appearance</span>
+					</button>
+				</div>
+			</div>
+			<div class="card joinMiddle">
 				<div class="card-body">
 					<h5 class="card-title">Updates</h5>
 					<button class="ripple-button joinTop roundedImage button" onclick="settingsWebsite('https://hienterprises.github.io/hiosmobile/lite')">
@@ -60,6 +77,7 @@
 				</div>
 			</div>
 		</main>
+		<script src="https://thehighlandcafe.github.io/hioswebcore/assets/scripts/background.js"></script>
         <script src="https://thehighlandcafe.github.io/hioswebcore/assets/scripts/ripple.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YpPczugYYLkLMkpBqlbQlHvpcRQlzhZKHXYkJGVxHf39Eo7RjVMqljJutlnWsZPd" crossorigin="anonymous"></script>
     </body>
