@@ -95,7 +95,9 @@ p {
     position: fixed;
     bottom: 80px;
     right: 10px;
-    background-color: var(--surface);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--onPrimaryContainer);
     border: 1px solid var(--onSurfaceVarient);
     border-radius: 60px;
     height: 30px;
@@ -169,6 +171,11 @@ p {
 		--outline: #8d9199;
 		--surfaceVarient: #43474e;
 		--onSurfaceVarient: #c3c6cf;
+	}
+
+	.back {
+		backdrop-filter: blur(10px);
+		background-color: rgba(0, 0, 0, 0.5);
 	}
     
     .roundedImage {
