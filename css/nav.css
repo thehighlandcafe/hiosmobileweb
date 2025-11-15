@@ -2,25 +2,25 @@
 
 /*COLOURS*/
 :root {
-	--primary: #0061a6;
-	--onPrimary: #ffffff;
-	--primaryContainer: #d2e4ff;
-	--onPrimaryContainer: #001c37;
-	--secondary: #535f70;
-	--onSecondary: #ffffff;
-	--secondaryContainer: #d7e3f8;
-	--onSecondaryContainer: #101c2b;
-	--tertiary: #6c5778;
-	--onTertiary: #ffffff;
-	--tertiaryContainer: #f3daff;
-	--onTertiaryContainer: #251431;
-	--background: #fdfcff;
-	--onBackground: #1a1c1e;
-	--surface: #fdfcff;
-	--onSurface: #1a1c1e;
-	--outline: #73777f;
-	--surfaceVarient: #dfe2eb;
-	--onSurfaceVarient: #43474e;
+  --primary: #0061a6;
+  --onPrimary: #ffffff;
+  --primaryContainer: #d2e4ff;
+  --onPrimaryContainer: #001c37;
+  --secondary: #535f70;
+  --onSecondary: #ffffff;
+  --secondaryContainer: #d7e3f8;
+  --onSecondaryContainer: #101c2b;
+  --tertiary: #6c5778;
+  --onTertiary: #ffffff;
+  --tertiaryContainer: #f3daff;
+  --onTertiaryContainer: #251431;
+  --background: #fdfcff;
+  --onBackground: #1a1c1e;
+  --surface: #fdfcff;
+  --onSurface: #1a1c1e;
+  --outline: #73777f;
+  --surfaceVarient: #dfe2eb;
+  --onSurfaceVarient: #43474e;
 
   --fontPrimary: 'Inter', sans-serif;
 }
@@ -55,6 +55,7 @@ body * {
     left: 0;
     right: 0;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Added for Safari */
     background-color: rgba(255, 255, 255, 0.5);
     color: var(--onPrimaryContainer);    
     display: flex;
@@ -144,8 +145,10 @@ body * {
 }
 
 .toolbaricon {
-  position: absolute;
+  position: fixed; /* <-- CHANGED FROM 'absolute' */
   bottom: 0;
+  left: 0; /* <-- ADDED for fixed positioning */
+  right: 0; /* <-- ADDED for fixed positioning */
   height: 60%;
   width: 100%;
   border-radius: 25px 25px 0px 0px;
@@ -153,12 +156,27 @@ body * {
   color: var(--onPrimaryContainer);
   border-top: 1px solid var(--onSurfaceVarient);
   z-index: 1;
-  display: none;
   text-align: left;
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
+
+  /* === FIX: Added blur for light mode === */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* === NEW: Animation properties === */
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out, visibility 0.3s ease-out;
 }
+
+/* === NEW: Visible state for animation === */
+.toolbaricon.visible {
+  visibility: visible;
+  transform: translateY(0);
+}
+
 
 .toolbaricon .container {
   margin-left: auto;
@@ -222,9 +240,9 @@ body * {
 }
 
 .tb-button i {
-	font-size: 25px !important;
-	padding-bottom: 5px;
-	vertical-align: middle !important;
+  font-size: 25px !important;
+  padding-bottom: 5px;
+  vertical-align: middle !important;
 }
 
 .toolbaricon h2 {
@@ -236,12 +254,12 @@ body * {
   /*Content*/
 
   #content {
-    display: flex;
-    flex-flow: column;
+    /* display: flex; <--- REMOVED */
+    /* flex-flow: column; <--- REMOVED */
     height: 100vh;
     width: 100%;
     border: none;
-    zoom: 0.6;
+    /* zoom: 0.6; <--- REMOVED (This was breaking scrolling) */
     z-index: 0;
   }
 
@@ -276,7 +294,8 @@ body * {
 
     .mdc-bottom-navigation, .toolbaricon {
       backdrop-filter: blur(10px);
-		  background-color: rgba(0, 0, 0, 0.5);
+      -webkit-backdrop-filter: blur(10px); /* Added for Safari */
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .top-bar {

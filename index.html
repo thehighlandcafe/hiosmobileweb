@@ -1,95 +1,113 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="color-scheme" content="dark light">
-		<link rel="manifest" href="manifest.json">
-		<link rel="icon" href="https://thehighlandcafe.github.io/hioswebcore/assets/pics/logos/hiosbadge.png" type="image/icon type">
-		<link rel="stylesheet" href="css/nav.css" type="text/css">
-		<link rel="stylesheet" href="css/style.css" type="text/css">
-		<link rel="stylesheet" href="https://thehighlandcafe.github.io/hioswebcore/assets/css/ripple.css" type="text/css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-components-web@13.0.0/dist/material-components-web.min.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-		<script src="scripts/nav.js"></script>
-		<script src="https://thehighlandcafe.github.io/hioswebcore/assets/scripts/links.js"></script>
-		<title>HiOSMobile | Home</title>
-		<script>
-			//Service worker supported by browser
-			if('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('sw.js');
-			}
-		</script>
-	</head>
-	<body>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-12" id="frameContainer">
-					<div class="back" onclick="showToolbaricon('dialog')">
-						<i class="materialBackButtons material-symbols-rounded">more_vert</i>
-					</div>
-					<div class="toolbaricon" id="dialog">
-						<div class="container">
-							<h1>&nbsp;&nbsp;Menu</h1>
-							<div class="toprightclose" onclick="hideToolbaricon('dialog')">
-								<h1><i class="material-symbols-rounded">close</i></h2>
-							</div>
-							<div class="card joinTop">
-								<div class="card-body">
-									<button class="ripple-button full roundedImage button" onclick="toolbariconPage('https://www.dropbox.com/scl/fo/7gmlnnjcau1np91ee83ht/h?rlkey=ifj506k3aal7ko7tfecy8oqyq&dl=0')">
-										<span class="material-symbols-rounded">download_for_offline</span>
-										<span class="button-text">Download Menus</span>
-									</button>
-								</div>
-							</div>
-							<div class="card joinBottom">
-								<div class="card-body">
-									<button class="ripple-button joinTop roundedImage button" onclick="link('activities/activity_settings.html')">
-										<span class="material-symbols-rounded">settings</span>
-										<span class="button-text">Settings</span>
-									</button>
-									<button class="ripple-button joinTop roundedImage button" onclick="link('activities/activity_help.html')">
-										<span class="material-symbols-rounded">help</span>
-										<span class="button-text">Help</span>
-									</button>
-									<button class="ripple-button joinTop roundedImage button" onclick="link('activities/activity_feedback.html')">
-										<span class="material-symbols-rounded">feedback</span>
-										<span class="button-text">Send Feedback</span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<iframe id="content" src="https://thehighlandcafe.github.io/hioswebcore/welcome.html"></iframe>
-				</div>
-			</div>
-			<nav class="mdc-bottom-navigation fixed-bottom">
-				<a class="mdc-bottom-navigation__item" data-iframe-url="https://thehighlandcafe.github.io/hioswebcore/welcome.html">
-					<div class="activeIcon" id="homeIcon">
-						<i class="material-symbols-rounded icon">home</i>
-					</div>
-					<span class="mdc-bottom-navigation__label" style="display: none;" id="homeLabel">Home</span>
-				</a>
-				<a class="mdc-bottom-navigation__item" data-iframe-url="https://thehighlandcafe.github.io/hioswebcore/restaurant.html">
-					<div class="inactiveIcon" id="restaurantIcon">
-						<i class="material-symbols-rounded icon">restaurant</i>
-					</div>
-					<span class="mdc-bottom-navigation__label" style="display: none;" id="restaurantLabel">Food</span>
-				</a>
-				<a class="mdc-bottom-navigation__item" data-iframe-url="https://thehighlandcafe.github.io/hioswebcore/hotelactivities.html">
-					<div class="inactiveIcon" id="hotelIcon">
-						<i class="material-symbols-rounded icon">hotel</i>
-					</div>
-					<span class="mdc-bottom-navigation__label" style="display: none;" id="hotelLabel">Hotel</span>
-				</a>
-				<a class="mdc-bottom-navigation__item" data-iframe-url="https://thehighlandcafe.github.io/hioswebcore/roomkey.html">
-					<div class="inactiveIcon" id="roomkeyIcon">
-						<i class="material-symbols-rounded icon">key</i>
-					</div>
-					<span class="mdc-bottom-navigation__label" style="display: none;" id="roomkeyLabel">Room Key</span>
-				</a>
-			</nav>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/material-components-web@13.0.0/dist/material-components-web.min.js"></script>
-		<script src="https://thehighlandcafe.github.io/hioswebcore/assets/scripts/ripple.js"></script>
-	</body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="dark light">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" href="https://thehighlandcafe.github.io/hioswebcore/assets/pics/logos/hiosbadge.png" type="image/icon type">
+        <link rel="stylesheet" href="css/nav.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="https://thehighlandcafe.github.io/hioswebcore/assets/css/ripple.css" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-components-web@13.0.0/dist/material-components-web.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        
+        <!-- === MOVED nav.js TO THE END of body === -->
+        <script src="https://thehighlandcafe.github.io/hioswebcore/assets/scripts/links.js"></script>
+        <title>HiOSMobile | Home</title>
+        <script>
+            //Service worker supported by browser
+            if('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js');
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12" id="frameContainer">
+                    <div class="materialMoreButton" onclick="showToolbaricon('dialog')">
+                        <i class="materialBackButtons material-symbols-rounded">more_vert</i>
+                    </div>
+                    
+                    <!-- This toolbar will now slide up -->
+                    <div class="toolbaricon" id="dialog">
+                        <div class="container">
+                            <h1>&nbsp;&nbsp;Menu</h1>
+                            <div class="toprightclose" onclick="hideToolbaricon('dialog')">
+                                <h1><i class="material-symbols-rounded">close</i></h2>
+                            </div>
+                            
+                            <!-- === UPDATED BUTTONS === -->
+                            <!-- All buttons are now in a single card for correct styling -->
+                            <div class="card full">
+                                <div class="card-body">
+                                    <!-- "Download Menus" is now the top button -->
+                                    <button class="ripple-button joinTop roundedImage button" onclick="toolbariconPage('https://www.dropbox.com/scl/fo/7gmlnnjcau1np91ee83ht/h?rlkey=ifj506k3aal7ko7tfecy8oqyq&dl=0')">
+                                        <span class="material-symbols-rounded">download_for_offline</span>
+                                        <span class="button-text">Download Menus</span>
+                                    </button>
+                                    
+                                    <!-- Settings is a middle button -->
+                                    <button class="ripple-button joinMiddle roundedImage button" onclick="link('activities/activity_settings.html')">
+                                        <span class="material-symbols-rounded">settings</span>
+                                        <span class="button-text">Settings</span>
+                                    </button>
+                                    
+                                    <!-- Help is a middle button -->
+                                    <button class="ripple-button joinMiddle roundedImage button" onclick="link('activities/activity_help.html')">
+                                        <span class="material-symbols-rounded">help</span>
+                                        <span class="button-text">Help</span>
+                                    </button>
+                                    
+                                    <!-- Send Feedback is the bottom button -->
+                                    <button class="ripple-button joinBottom roundedImage button" onclick="link('activities/activity_feedback.html')">
+                                        <span class="material-symbols-rounded">feedback</span>
+                                        <span class="button-text">Send Feedback</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- === END OF UPDATED BUTTONS === -->
+                            
+                        </div>
+                    </div>
+                    <iframe id="content" src="https://thehighlandcafe.github.io/hioswebcore/welcome.html"></iframe>
+                </div>
+            </div>
+            <nav class="mdc-bottom-navigation fixed-bottom">
+                <a class="mdc-bottom-navigation__item" data-iframe-url="https://thehighlandcafe.github.io/hioswebcore/welcome.html">
+                    <div class="activeIcon" id="homeIcon">
+                        <i class="material-symbols-rounded icon">home</i>
+                    </div>
+                    <span class="mdc-bottom-navigation__label" style="display: none;" id="homeLabel">Home</span>
+                </a>
+                <a class="mdc-bottom-navigation__item" data-iframe-url="https://thehighlandcafe.github.io/hioswebcore/restaurant.html">
+                    <div class="inactiveIcon" id="restaurantIcon">
+                        <i class="material-symbols-rounded icon">restaurant</i>
+                    </div>
+                    <span class="mdc-bottom-navigation__label" style="display: none;" id="restaurantLabel">Food</span>
+                </a>
+                <a class="mdc-bottom-navigation__item" data-iframe-url="https://thehighlandcafe.github.io/hioswebcore/hotelactivities.html">
+                    <div class="inactiveIcon" id="hotelIcon">
+                        <i class="material-symbols-rounded icon">hotel</i>
+                    </div>
+                    <span class="mdc-bottom-navigation__label" style="display: none;" id="hotelLabel">Hotel</span>
+                </a>
+                <a class="mdc-bottom-navigation__item" data-iframe-url="https://thehighlandcafe.github.io/hioswebcore/roomkey.html">
+                    <div class="inactiveIcon" id="roomkeyIcon">
+                        <i class="material-symbols-rounded icon">key</i>
+                    </div>
+                    <span classs="mdc-bottom-navigation__label" style="display: none;" id="roomkeyLabel">Room Key</span>
+                </a>
+            </nav>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/material-components-web@13.0.0/dist/material-components-web.min.js"></script>
+        
+        <!-- This script contains your liquid glass and theme logic -->
+        <script src="https://thehighlandcafe.github.io/hioswebcore/assets/scripts/background.js"></script>
+        
+        <script src="https://thehighlandcafe.github.io/hioswebcore/assets/scripts/ripple.js"></script>
+
+        <!-- === This script now contains the logic for the nav and toolbar === -->
+        <script src="scripts/nav.js"></script>
+    </body>
 </html>

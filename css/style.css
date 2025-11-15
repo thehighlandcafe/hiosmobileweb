@@ -3,33 +3,33 @@
 
 /*COLOURS*/
 :root {
-	--primary: #0061a6;
-	--onPrimary: #ffffff;
-	--primaryContainer: #d2e4ff;
-	--onPrimaryContainer: #001c37;
-	--secondary: #535f70;
-	--onSecondary: #ffffff;
-	--secondaryContainer: #d7e3f8;
-	--onSecondaryContainer: #101c2b;
-	--tertiary: #6c5778;
-	--onTertiary: #ffffff;
-	--tertiaryContainer: #f3daff;
-	--onTertiaryContainer: #251431;
-	--background: #fdfcff;
-	--onBackground: #1a1c1e;
-	--surface: #fdfcff;
-	--onSurface: #1a1c1e;
-	--outline: #73777f;
-	--surfaceVarient: #dfe2eb;
-	--onSurfaceVarient: #43474e;
+    --primary: #0061a6;
+    --onPrimary: #ffffff;
+    --primaryContainer: #d2e4ff;
+    --onPrimaryContainer: #001c37;
+    --secondary: #535f70;
+    --onSecondary: #ffffff;
+    --secondaryContainer: #d7e3f8;
+    --onSecondaryContainer: #101c2b;
+    --tertiary: #6c5778;
+    --onTertiary: #ffffff;
+    --tertiaryContainer: #f3daff;
+    --onTertiaryContainer: #251431;
+    --background: #fdfcff;
+    --onBackground: #1a1c1e;
+    --surface: #fdfcff;
+    --onSurface: #1a1c1e;
+    --outline: #73777f;
+    --surfaceVarient: #dfe2eb;
+    --onSurfaceVarient: #43474e;
 
-	--fontPrimary: 'Inter', sans-serif;
+    --fontPrimary: 'Inter', sans-serif;
 }
 
 /*HTML CSS CODE*/
 
 body {
-	margin: 0;
+    margin: 0;
 }
 
 .material-symbols-rounded {
@@ -42,14 +42,14 @@ body {
 
 /*Section containers*/
 .card {
-	background-color: var(--primaryContainer);
-	color: var(--onPrimaryContainer);
-	text-align: center;
-	border: none;
+    background-color: var(--primaryContainer);
+    color: var(--onPrimaryContainer);
+    text-align: center;
+    border: none;
 }
 
 .card h1, .card h2 {
-	color: var(--primary) !important;
+    color: var(--primary) !important;
 }
 
 /*Navigation Buttons*/
@@ -91,12 +91,10 @@ p {
     font-size: 30px !important;
 }
 
-.back {
+.back, .materialMoreButton {
     position: fixed;
     bottom: 80px;
-    right: 10px;
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);
     color: var(--onPrimaryContainer);
     border: 1px solid var(--onSurfaceVarient);
     border-radius: 60px;
@@ -104,23 +102,31 @@ p {
     width: 30px;
 }
 
+.back {
+	right: 15px;
+}
+
+.materialMoreButton {
+	left: 15px;
+}
+
 /*Joins*/
 .joinTop {
     border-radius: 25px 25px 6px 6px !important;
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .joinMiddle {
-	border-radius: 6px !important;
-	margin-bottom: 5px;
+    border-radius: 6px !important;
+    margin-bottom: 5px;
 }
 
 .joinBottom {
-	border-radius: 6px 6px 25px 25px !important;
+    border-radius: 6px 6px 25px 25px !important;
 }
 
 .full {
-	border-radius: 25px;
+    border-radius: 25px;
 }
 
 /*Heading Text Container*/
@@ -146,37 +152,37 @@ p {
 
 /*Rounded Image*/
 .roundedImage {
-	border-radius: 25px;
-	border: 0.5px solid #303034;
+    border-radius: 25px;
+    border: 0.5px solid #303034;
 }
 
 @media(prefers-color-scheme: dark) {
     :root {
-		--primary: #a0c9ff;
-		--onPrimary: #00325a;
-		--primaryContainer: #253141;
-		--onPrimaryContainer: #d2e4ff;
-		--secondary: #bbc7db;
-		--onSecondary: #253141;
-		--secondaryContainer: #3c4858;
-		--onSecondaryContainer: #d7e3f8;
-		--tertiary: #d7bde4;
-		--onTertiary: #3b2947;
-		--tertiaryContainer: #533f5f;
-		--onTertiaryContainer: #f3daff;
-		--background: #1a1c1e;
-		--onBackground: #e3e2e6;
-		--surface: #1a1c1e;
-		--onSurface: #e3e2e6;
-		--outline: #8d9199;
-		--surfaceVarient: #43474e;
-		--onSurfaceVarient: #c3c6cf;
-	}
+        --primary: #a0c9ff;
+        --onPrimary: #00325a;
+        --primaryContainer: #253141;
+        --onPrimaryContainer: #d2e4ff;
+        --secondary: #bbc7db;
+        --onSecondary: #253141;
+        --secondaryContainer: #3c4858;
+        --onSecondaryContainer: #d7e3f8;
+        --tertiary: #d7bde4;
+        --onTertiary: #3b2947;
+        --tertiaryContainer: #533f5f;
+        --onTertiaryContainer: #f3daff;
+        --background: #1a1c1e;
+        --onBackground: #e3e2e6;
+        --surface: #1a1c1e;
+        --onSurface: #e3e2e6;
+        --outline: #8d9199;
+        --surfaceVarient: #43474e;
+        --onSurfaceVarient: #c3c6cf;
+    }
 
-	.back {
-		backdrop-filter: blur(10px);
-		background-color: rgba(0, 0, 0, 0.5);
-	}
+    .back {
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
     
     .roundedImage {
         border: none;
@@ -202,46 +208,165 @@ p {
 /*New toolbaricon dialog buttons 2025*/
 /*Large link buttons*/
 .button {
-	width: 100%;
-	height: 60px;
-	background-color: var(--secondaryContainer);
-	color: var(--onSecondaryContainer);
-	font-family: var(--fontPrimary);
-	text-align: left;
-	font-weight: bold;
-	transition: 0.5s;
-	float: inline-block;
-	border-radius: 100px !important;
+    width: 100%;
+    height: 60px;
+    background-color: var(--secondaryContainer);
+    color: var(--onSecondaryContainer);
+    font-family: var(--fontPrimary);
+    text-align: left;
+    font-weight: bold;
+    transition: 0.5s;
+    float: inline-block;
+    border-radius: 100px !important;
 }
 
 .button:hover {
-	background-color: #96AFB8;
+    background-color: #96AFB8;
 }
 
 .button img {
-	float: right;
-	width: 50px;
-	margin-right: 10px;
-	vertical-align: middle;
-	line-height: 60px;
+    float: right;
+    width: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+    line-height: 60px;
 }
 
 .button .material-symbols-rounded {
-	float: right;
-	font-size: 25px;
-	margin-right: 10px;
-	vertical-align: middle;
-	line-height: 60px;
+    float: right;
+    font-size: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+    line-height: 60px;
 }
 
 .button .button-text {
-	vertical-align: middle;
-	font-size: 25px;
-	line-height: 60px;
-	margin-left: 10px;
+    vertical-align: middle;
+    font-size: 25px;
+    line-height: 60px;
+    margin-left: 10px;
 }
 
 .roundedImage {
-	border-radius: 25px;
-	border: 0.5px solid var(--outline);
+    border-radius: 25px;
+    border: 0.5px solid var(--outline);
 }
+
+
+/* --- BEGIN MERGED LIQUID GLASS STYLES --- */
+
+/* 1. Define the glass colors */
+:root {
+  --liquid-glass-bg: rgba(255, 255, 255, 0.35); /* More opaque */
+  --liquid-glass-highlight: rgba(255, 255, 255, 0.8); /* Brighter edge */
+  --liquid-text-color: var(--onSurface); /* Uses your theme's text color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --liquid-glass-bg: rgba(40, 40, 40, 0.5); /* More opaque */
+    --liquid-glass-highlight: rgba(255, 255, 255, 0.25); /* Brighter edge */
+    --liquid-text-color: var(--onSurface); /* Uses your theme's text color */
+  }
+}
+
+/*
+ * 2. Style the main .card as the container.
+ * We use .glass-container-ready (which the JS adds) to be specific.
+ * This overrides the default .card style you defined at the top.
+*/
+.card.glass-container-ready {
+  position: relative;
+  /* Make the card itself transparent, the layers inside do the work */
+  background: transparent !important; 
+  color: var(--onPrimaryContainer);
+  border: none !important; /* Remove the old border */
+  border-radius: 25px !important; /* Keep your rounded shape */
+  overflow: hidden;
+  text-align: center;
+  /*box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);*/
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+}
+
+/* 3. Style the 4 layers that the JavaScript just added */
+.glass-filter {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* filter: url(#lg-dist); */ /* <-- This is conditional via JS */
+  isolation: isolate;
+  
+  /* Apply the frost */
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.glass-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* Apply the semi-transparent background color */
+  background: var(--liquid-glass-bg);
+}
+
+.glass-specular {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  overflow: hidden;
+  /* Apply the "wet" edge highlight */
+  box-shadow: inset 1px 1px 0 var(--liquid-glass-highlight),
+    inset 0 0 5px var(--liquid-glass-highlight);
+}
+
+.glass-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column; /* Make content stack vertically */
+  align-items: center; /* This centers content blocks */
+  text-align: center; 
+  width: 100%;
+  padding: 0; /* Remove double padding */
+}
+
+/* 4. Readability fixes for YOUR content inside the glass */
+.glass-content .card-title,
+.glass-content .para,
+.glass-content h1,
+.glass-content h2,
+.glass-content h3,
+.glass-content h5 {
+  /*color: var(--liquid-text-color) !important;*/
+  text-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+/* Fix for .form-control (like your textarea) inside the glass */
+.glass-content .form-control {
+  background-color: rgba(0,0,0,0.1) !important;
+  color: var(--liquid-text-color) !important;
+  border-color: var(--liquid-glass-highlight) !important;
+  border-radius: 8px !important;
+}
+
+.glass-content .form-control::placeholder {
+  color: var(--liquid-text-color) !important;
+  opacity: 0.7;
+}
+
+/* 5. Style the drag-handle ghost (for welcome.html) */
+.widget-ghost {
+  opacity: 0.4;
+  background-color: #0d6efd;
+  border-radius: 25px;
+}
+
+/* --- Add-on for Liquid Glass Toggle --- */
+
+/* This rule ADDs the liquid distortion *only* if the toggle is ON */
+body.liquid-glass-on .glass-filter {
+    filter: url(#lg-dist);
+}
+
+/* --- END OF MERGED STYLES --- */
