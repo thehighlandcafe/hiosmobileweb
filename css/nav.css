@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,1..1000,100&display=swap');
 
 /*COLOURS*/
 :root {
@@ -20,54 +20,61 @@
   --onSurface: #1a1c1e;
   --outline: #73777f;
   --surfaceVarient: #dfe2eb;
-  --onSurfaceVarient: #43474e;
+  /* Note: Preserved your spelling 'Varient' to match your root variables */
+  --onSurfaceVarient: #43474e; 
 
-  --fontPrimary: 'Inter', sans-serif;
+  --fontPrimary: 'Google Sans Flex', sans-serif;
 }
-
-/*HTML CSS CODE*/
 
 html {
     height: 100%;
     font-family: var(--fontPrimary);
     user-select: none;
-    -webkit-user-select: none; /*Safari*/
-    -moz-user-select: none; /*Firefox*/
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
 }
-
-/*body {
-    margin: 0;
-    padding-bottom: 56px; /* Adjust to match the height of the bottom navigation bar 
-  }*/
 
 body * {
   -webkit-tap-highlight-color: transparent;
 }
 
-  /*.container {
-    position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
-  }*/
-
-  .mdc-bottom-navigation {
-    height: 60px;
+/* =========================================
+   FLOATING NAV BAR FIX
+   Targeting both Element (tag) and Class (.)
+   ========================================= */
+mdc-bottom-navigation, 
+.mdc-bottom-navigation {
+    /* --- Positioning --- */
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 20px; 
+    left: 50%;   
+    transform: translateX(-50%); 
+    
+    /* --- Sizing --- */
+    width: 90%;       
+    max-width: 400px; 
+    height: 60px;
+    box-sizing: border-box; /* IMPORTANT: Keeps padding from breaking width */
+    
+    /* --- Visuals --- */
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Added for Safari */
-    background-color: rgba(255, 255, 255, 0.5);
-    color: var(--onPrimaryContainer);    
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.85); 
+    color: var(--onPrimaryContainer);
+    border-radius: 60px; 
+    
+    /* --- Layout --- */
     display: flex;
     justify-content: space-around;
+    align-items: center; 
     z-index: 1000;
-    border-radius: 25px 25px 0px 0px;
-    /*margin: 10px;
-    margin-bottom: 15px !important;*/
-    border-top: 1px solid var(--onSurfaceVarient);
-  }
+    
+    /* --- Depth --- */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); 
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+}
 
-  .mdc-bottom-navigation__item {
+.mdc-bottom-navigation__item {
     display: flex;
     text-decoration: none;
     flex-direction: column;
@@ -77,22 +84,17 @@ body * {
     color: var(--onPrimaryContainer);
     transition: color 0.2s;
     cursor: pointer;
-  }
+}
 
-  .mdc-bottom-navigation__label {
+.mdc-bottom-navigation__label {
     font-size: 12px !important;
-  }
+}
 
-  /*.mdc-bottom-navigation__item:hover,
-  .mdc-bottom-navigation__item--active {
-    color: #313538;
-  }*/
-
-  .icon, .activeIcon {
+.icon, .activeIcon {
     padding-top: 2px;
-  }
+}
 
-  .activeIcon {
+.activeIcon {
     background-color: var(--primaryContainer);
     width: 64px;
     height: 32px;
@@ -100,16 +102,19 @@ body * {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .inactiveIcon {
+.inactiveIcon {
     width: 64px;
     height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
+/* =========================================
+   TOP BAR & TOOLBAR
+   ========================================= */
 .top-bar {
     background-color: #d6e4f7;
     position: fixed;
@@ -130,25 +135,15 @@ body * {
   text-align: right !important;
 }
 
-.left {
-  float: left;
-  text-align: left;
-}
-
-.right {
-  float: right;
-  text-align: right;
-}
-
-.section {
-  width: 50%;
-}
+.left { float: left; text-align: left; }
+.right { float: right; text-align: right; }
+.section { width: 50%; }
 
 .toolbaricon {
-  position: fixed; /* <-- CHANGED FROM 'absolute' */
+  position: fixed; 
   bottom: 0;
-  left: 0; /* <-- ADDED for fixed positioning */
-  right: 0; /* <-- ADDED for fixed positioning */
+  left: 0; 
+  right: 0; 
   height: 60%;
   width: 100%;
   border-radius: 25px 25px 0px 0px;
@@ -157,67 +152,34 @@ body * {
   border-top: 1px solid var(--onSurfaceVarient);
   z-index: 1;
   text-align: left;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px; /* simplified padding */
   box-sizing: border-box;
-
-  /* === FIX: Added blur for light mode === */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
-  /* === NEW: Animation properties === */
+  
+  /* Animation */
   visibility: hidden;
   transform: translateY(100%);
   transition: transform 0.3s ease-out, visibility 0.3s ease-out;
 }
 
-/* === NEW: Visible state for animation === */
 .toolbaricon.visible {
   visibility: visible;
   transform: translateY(0);
 }
 
-
 .toolbaricon .container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 100%; /* Default to full width within the padding */
+  max-width: 100%; 
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-  .toolbaricon .container {
-    max-width: 540px;
-  }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .toolbaricon .container {
-    max-width: 720px;
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  .toolbaricon .container {
-    max-width: 960px;
-  }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .toolbaricon .container {
-    max-width: 1140px;
-  }
-}
-
-/* Extra extra large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-  .toolbaricon .container {
-    max-width: 1320px;
-  }
-}
+/* Responsive Containers */
+@media (min-width: 576px) { .toolbaricon .container { max-width: 540px; } }
+@media (min-width: 768px) { .toolbaricon .container { max-width: 720px; } }
+@media (min-width: 992px) { .toolbaricon .container { max-width: 960px; } }
+@media (min-width: 1200px) { .toolbaricon .container { max-width: 1140px; } }
+@media (min-width: 1400px) { .toolbaricon .container { max-width: 1320px; } }
 
 .toprightclose {
   position: absolute;
@@ -227,12 +189,6 @@ body * {
 
 .card-body {
   padding: 1rem;
-}
-
-.toprightclose {
-  position: absolute;
-  top: 0px;
-  right: 10px;
 }
 
 .tb-button {
@@ -251,25 +207,21 @@ body * {
   line-height: 17px;
 }
 
-  /*Content*/
-
-  #content {
-    /* display: flex; <--- REMOVED */
-    /* flex-flow: column; <--- REMOVED */
+/* =========================================
+   CONTENT & DARK MODE
+   ========================================= */
+#content {
     height: 100vh;
     width: 100%;
     border: none;
-    /* zoom: 0.6; <--- REMOVED (This was breaking scrolling) */
     z-index: 0;
-  }
+}
 
-  @media screen and (-webkit-min-device-pixel-ratio:0) {
-    #content {
-      zoom: 1;
-    }
-  }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #content { zoom: 1; }
+}
 
-  @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
       --primary: #a0c9ff;
       --onPrimary: #00325a;
@@ -292,10 +244,14 @@ body * {
       --onSurfaceVarient: #c3c6cf;
     }
 
-    .mdc-bottom-navigation, .toolbaricon {
+    /* FIX: Added both Tag and Class selectors here */
+    mdc-bottom-navigation, 
+    .mdc-bottom-navigation, 
+    .toolbaricon {
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px); /* Added for Safari */
-      background-color: rgba(0, 0, 0, 0.5);
+      -webkit-backdrop-filter: blur(10px);
+      background-color: rgba(30, 30, 30, 0.8); /* Darker, slightly transparent */
+      border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for dark mode */
     }
 
     .top-bar {

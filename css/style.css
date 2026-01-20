@@ -1,5 +1,5 @@
 /*Import Fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,1..1000,100&display=swap');
 
 /*COLOURS*/
 :root {
@@ -23,7 +23,7 @@
     --surfaceVarient: #dfe2eb;
     --onSurfaceVarient: #43474e;
 
-    --fontPrimary: 'Inter', sans-serif;
+    --fontPrimary: 'Google Sans Flex', sans-serif;
 }
 
 /*HTML CSS CODE*/
